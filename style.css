@@ -1,0 +1,31 @@
+#life-calendar-canvas {
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+/* .life-calendar-pointer {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 5vw;
+   height: 5vw;
+   border: 5px solid black;
+   border-radius: 50%;
+   background-color: rgb(0, 81, 255);
+   background-color: red;
+   z-index: 1;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} */
+
+.title {
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 25px;
+   font-weight: 500;
+   margin-top: 10vh;
+}
