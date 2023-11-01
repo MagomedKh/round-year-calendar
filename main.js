@@ -30,22 +30,6 @@ function drawLifeCalendar() {
    context.lineWidth = 18;
    context.stroke();
 
-   // Draw the month`s dashes
-   for (let i = 0; i < 12; i++) {
-      const radianOfDash = getRadianOfMonthDash();
-      context.beginPath();
-      context.arc(
-         centerX,
-         centerY,
-         radius,
-         radianOfDash - 0.01,
-         radianOfDash + 0.01
-      );
-      context.strokeStyle = "#222831";
-      context.lineWidth = (i + 1) % 3 === 0 ? 30 : 20;
-      context.stroke();
-   }
-
    // Color past time
    const progress = dayOfYear / daysInYear;
    const endAngle = progress * 2 * PI - PI / 2;
@@ -57,8 +41,25 @@ function drawLifeCalendar() {
    context.beginPath();
    context.arc(centerX, centerY, radius, endAngle - 0.03, endAngle + 0.03);
    context.strokeStyle = "#E84545";
-   context.lineWidth = 95;
+   context.lineWidth = 120;
    context.stroke();
+
+   // Draw the month`s dashes
+   for (let i = 0; i < 12; i++) {
+      const isThird = (i + 1) % 3 === 0;
+      const radianOfDash = getRadianOfMonthDash();
+      context.beginPath();
+      context.arc(
+         centerX,
+         centerY,
+         radius,
+         radianOfDash - (isThird ? 0.02 : 0.01),
+         radianOfDash + (isThird ? 0.02 : 0.01)
+      );
+      context.strokeStyle = isThird ? "#222831" : "#3b4c66";
+      context.lineWidth = isThird ? 125 : 85;
+      context.stroke();
+   }
 
    // Draw the pointer
    pointer.style.top = centerY + radius * Math.sin(angle) + "px";
