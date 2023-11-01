@@ -58,6 +58,7 @@ function drawLifeCalendar() {
       );
       context.strokeStyle = isThird ? "#222831" : "#3b4c66";
       context.lineWidth = isThird ? 95 : 70;
+
       context.stroke();
    }
 
